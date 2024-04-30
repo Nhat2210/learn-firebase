@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getDatabase, ref, set, push, onValue, update } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+import { getDatabase, ref, set, push, onValue, update , remove } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
 const firebaseConfig = {
   apiKey: "AIzaSyATT80hd_95QeEg5Ck7GISAyh0G8XDFWZU",
   authDomain: "learnfirebase-ba204.firebaseapp.com",
@@ -62,4 +62,16 @@ const UpdateUser = (id, fullName, email) => {
 const buttonUpdate = document.querySelector("#button-update")
 buttonUpdate.addEventListener("click",()=> {
   UpdateUser("1", " ", " ")
+})
+
+
+//xoa ban ghi
+const DeleteUser = (id) => {
+  remove(ref(db, 'users/' + id),{
+  })
+}
+const  buttonDelete = document.querySelector("#button-delete")
+
+buttonDelete.addEventListener("click", () => {
+  DeleteUser("1")
 })
